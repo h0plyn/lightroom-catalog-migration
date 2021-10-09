@@ -11,7 +11,11 @@ const lrcatMigration = (source, target) =>
     target,
     {
       filter: (src) => {
-        fs.lstatSync(src).isDirectory() ? true : src.endsWith('.lrcat');
+        if (fs.lstatSync(src).isDirectory()) {
+          return true;
+        } else {
+          return src.endsWith('.lrcat');
+        }
       },
     },
     function (err) {
@@ -19,8 +23,8 @@ const lrcatMigration = (source, target) =>
         return console.error(err);
       }
 
-      console.log('Folders & .lrcat data copied recursively');
+      console.log('Folders & .lrcat copied recursively');
     }
   );
 
-lrcatMigration('../../../../source/', '../../../../documents/target');
+lrcatMigration('../../../../Pictures', '../../../../Documents/CopyTest');
