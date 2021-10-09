@@ -1,0 +1,14 @@
+{
+  "name": "migration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "auto": "npx nodemon index.js"
+  },
+  "author": "Ricky Rhodes",
+  "license": "ISC",
+  "dependencies": {
+    "ncp": "^2.0.0"
+  }
+}
